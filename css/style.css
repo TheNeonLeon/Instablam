@@ -2,13 +2,15 @@ body{
     background-color: tomato !important;
 }
 #video {
-    width:320px;
-    height:240px;
+    display: flex;
+    width:20rem;
+    height:15rem;
   }
   
   #photo {
-    width:320px;
-    height:240px;
+    display: flex;
+    width:20rem;
+    height:15rem;
   }
   
   #canvas {
@@ -41,7 +43,4 @@ body{
     font-size: 16px;
     font-family: "Lucida Grande", "Arial", sans-serif;
     width: 760px;
-  }
-  .col-md-3{
-      
   }
