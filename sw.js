@@ -13,7 +13,7 @@ const assets = [
 
 self.addEventListener('install', evt =>{
     //console.log('service worker has been installed');
-    evt.waitUntil(caches.open(static)
+    evt.waitUntil(caches.open(dynamicCache)
     .then(cache =>{
         console.log('caching assets');
         cache.addAll(assets);
@@ -24,8 +24,9 @@ self.addEventListener('activate', evt =>{
     console.log('service worker has been activated');
     evt.waitUntil(caches.keys()
     .then(keys => {
-        return Promise.all(keys.filter(key => key !== static && key !== dynamicCache))
+        return Promise.all(keys.filter(key => key !== static && key !== dynamicCache)
         .map(key => caches.delete(key))
+        )
     }))
 });
 
@@ -42,6 +43,8 @@ self.addEventListener('fetch', evt =>{
                     return fetchRes;
                 })
             });
-        }).catch(() => caches.match('/offline.html'))
-    );
+        }).catch(() => { 
+            return caches.match('/offline.html');
+    })
+  );
 });
