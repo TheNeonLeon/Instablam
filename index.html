@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/style.css" media="all">
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.0.0/caman.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js" integrity="sha256-Ttj6Ke2Nzuxi5upPlHetkZxBtdTq0LV1Z6BEUUsKPfs=" crossorigin="anonymous"></script>
     <meta name="theme-color" content="#660200">
 </head>
 <body>
@@ -15,8 +15,7 @@
         <video id="video">Video stream not available.</video>
         <button id="picture-button">Take photo</button> 
     </div>
-    <canvas id="canvas">
-    </canvas>
+    <canvas id="canvas" data-caman-hidpi-disabled="true"></canvas>
     <div class="output">
         <img id="photo" alt="Your picture will show up here."> 
     </div>
@@ -64,6 +63,7 @@
         </div>
         
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js" integrity="sha256-Ttj6Ke2Nzuxi5upPlHetkZxBtdTq0LV1Z6BEUUsKPfs=" crossorigin="anonymous"></script>
     <script src="/script/index.js"></script>
 
 </body>

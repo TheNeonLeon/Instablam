@@ -4,6 +4,7 @@ if('serviceWorker' in navigator){
     .catch((err) => console.log('service worker not registered', err));
 }
 
+
 (function() {
   
     var width = 320; 
@@ -35,8 +36,6 @@ if('serviceWorker' in navigator){
         if (!streaming) {
           height = video.videoHeight / (video.videoWidth/width);
         
-          // Firefox currently has a bug where the height can't be read from
-          // the video, so we will make assumptions if this happens.
         
           if (isNaN(height)) {
             height = width / (4/3);
@@ -89,3 +88,58 @@ if('serviceWorker' in navigator){
  /* document.addEventListener('click', event =>{
       if (event.target)
   })*/
+
+
+  let canvas = document.getElementById('canvas');
+  let photo = document.getElementById('photo');
+  let video = document.getElementById('video');
+
+
+  //all filters
+  document.addEventListener('click', event =>{
+    if(event.target.classList.contains('filter-btn')){
+        if(event.target.classList.contains('brightness-add')){
+            Caman("#photo", function() {
+                this.brightness(5).render();
+            });
+        }else if(event.target.classList.contains('brightness-remove')) {
+            Caman("#photo", function() {
+                this.brightness(-5).render();
+            })
+        }else if(event.target.classList.contains('contrast-add')) {
+            Caman("#photo", function() {
+                this.contrast(5).render();
+            })
+        }else if(event.target.classList.contains('contrast-remove')) {
+            Caman("#photo", function() {
+                this.contrast(-5).render();
+            })
+        }else if(event.target.classList.contains('vibrance-add')) {
+            Caman("#photo", function() {
+                this.vibrance(5).render();
+            })
+        }else if(event.target.classList.contains('vibrance-remove')) {
+            Caman("#photo", function() {
+                this.vibrance(-5).render();
+            })
+        }else if(event.target.classList.contains('hue-add')) {
+            Caman("#photo", function() {
+                this.hue(5).render();
+            })
+        }else if(event.target.classList.contains('hue-remove')) {
+            Caman("#photo", function() {
+                this.hue(-5).render();
+            })
+        }else if(event.target.classList.contains('gamma-add')) {
+            Caman("#photo", function() {
+                this.gamma(5).render();
+            })
+        }else if(event.target.classList.contains('gamma-remove')) {
+            Caman("#photo", function() {
+                this.gamma(-5).render();
+            })
+        }
+    }
+})
+
+
