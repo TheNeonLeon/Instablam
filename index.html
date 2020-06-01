@@ -6,6 +6,7 @@
     <title>Instablam</title>
     <link rel="stylesheet" href="/css/style.css" media="all">
     <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.0.0/caman.full.min.js"></script>
     <meta name="theme-color" content="#660200">
 </head>
@@ -17,9 +18,52 @@
     <canvas id="canvas">
     </canvas>
     <div class="output">
-        <img id="photo" alt="The screen capture will appear in this box."> 
+        <img id="photo" alt="Your picture will show up here."> 
     </div>
+    <h4 class="text-center my-3">Filters</h4>
+    <div class="row text-center my-4">
+        <div class="col-md-3">
+            <div class="btn-group btn-group-sm">
+                <button class="filter-btn brightness-remove">-</button>
+            <button class="btn" disabled>Brightness</button>
+            <button class="filter-btn brightness-add">+</button>
+            </div>
+            </div>
+            
+            <div class="col-md-3">
+            <div class="btn-group btn-group-sm">
+                <button class="filter-btn contrast-remove">-</button>
+                <button class="btn" disabled>Contrast</button>
+                <button class="filter-btn contrast-add">+</button>
+            </div>
+            </div>
 
+            <div class="col-md-3">
+            <div class="btn-group btn-group-sm">
+                <button class="filter-btn vibrance-remove">-</button>
+                <button class="btn" disabled>Vibrance</button>
+                <button class="filter-btn vibrance-add">+</button>
+            </div>
+            </div>
+
+            <div class="col-md-3">
+            <div class="btn-group btn-group-sm">
+                <button class="filter-btn hue-remove">-</button>
+                <button class="btn" disabled>Hue</button>
+                <button class="filter-btn hue-add">+</button>
+            </div>
+            </div>
+
+            <div class="col-md-3">
+            <div class="btn-group btn-group-sm">
+                <button class="filter-btn gamma-remove">-</button>
+                <button class="btn" disabled>Gamma</button>
+                <button class="filter-btn gamma-add">+</button>
+            </div>
+            </div>
+        </div>
+        
+    </div>
     <script src="/script/index.js"></script>
 
 </body>

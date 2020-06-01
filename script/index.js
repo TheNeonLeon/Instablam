@@ -21,7 +21,7 @@ if('serviceWorker' in navigator){
       canvas = document.getElementById('canvas');
       photo = document.getElementById('photo');
       pictureButton = document.getElementById('picture-button');
-  
+  //Usage of mediaDevices
       navigator.mediaDevices.getUserMedia({video: true, audio: false})
       .then(function(stream) {
         video.srcObject = stream;
@@ -58,9 +58,7 @@ if('serviceWorker' in navigator){
       clearphoto();
     }
   
-    // Fill the photo with an indication that none has been
-    // captured.
-  
+
     function clearphoto() {
       var context = canvas.getContext('2d');
       context.fillStyle = "#AAA";
@@ -69,12 +67,6 @@ if('serviceWorker' in navigator){
       var data = canvas.toDataURL('image/png');
       photo.setAttribute('src', data);
     }
-    
-    // Capture a photo by fetching the current contents of the video
-    // and drawing it into a canvas, then converting that to a PNG
-    // format data URL. By drawing it on an offscreen canvas and then
-    // drawing that to the screen, we can change its size and/or apply
-    // other changes before drawing it.
   
     function takepicture() {
       var context = canvas.getContext('2d');
@@ -90,7 +82,10 @@ if('serviceWorker' in navigator){
       }
     }
   
-    // Set up our event listener to run the startup process
-    // once loading is complete.
+
     window.addEventListener('load', startup, false);
   })();
+
+ /* document.addEventListener('click', event =>{
+      if (event.target)
+  })*/
