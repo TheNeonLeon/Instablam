@@ -1,0 +1,14 @@
+{
+  "name": "instablam",
+  "version": "1.0.0",
+  "description": "Instablam-app",
+  "main": "sw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leon Listo",
+  "license": "ISC",
+  "dependencies": {
+    "manifest-json": "^1.0.1"
+  }
+}
